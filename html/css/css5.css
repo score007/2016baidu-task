@@ -1,0 +1,143 @@
+.head
+{
+	background-color:black;
+}
+.head ul{
+	float: right;
+	margin: 0 20px 0 0;
+}
+.head li{
+	display: inline;
+	line-height: 50px;
+}
+.head li a{
+	text-decoration: none;
+	color: white;
+	font-size: 13px;
+	padding: 5px;
+}
+
+
+
+.zhulan{
+	background: white;
+	margin: 40px 40px;
+	width: 70%;
+	padding:15px;
+	font-size: 13px;
+	line-height: 15px;
+	box-shadow:3px 3px 3px  #888888;
+}
+.zhulan h2{
+	font-size: 20px;
+	line-height: 25px;
+}
+.gray{
+	color: gainsboro;
+}
+.zhulan h3{
+	font-size: 18px;
+	line-height: 22px;
+	margin: 7px 0px;
+}
+.zhulan h4{
+	font-size: 10px;
+	margin: 0 0 5px ;
+}
+.zhulan p{
+	text-indent:2em ;
+}
+.zhulan img{
+	margin: 5px 0;
+}
+
+.tu{
+	width: 200px;
+	padding:20px;
+}
+
+.biaoge{
+	width: 100%;
+	border: solid 2px;
+}
+.biaoge td,th{
+	border:solid 1px grey;
+}
+.biaoge .biaotou{
+	background: black;
+	color: white;
+}
+.biaoge .zongji{
+	background: gray;
+	color: black;
+}
+
+.foot{
+	background: black;
+	color: white;
+	text-align: center;
+	font-size: 12px;
+	padding: 18px 0 0 ;
+	height: 32px;
+}
+
+.celan{
+	background: white;
+	box-shadow: 3px 3px 3px  #888888;
+	width: 20%;
+	position: absolute;
+	right: 0;	
+	top: 79px;
+	padding: 5px;
+	margin: 10px 30px;
+	font-size: 12px;
+	line-height: 15px;
+}
+
+.celan h2{
+	padding: 20px 5px 10px 20px;
+}
+
+.celan label{
+	float: left; width: 10em; margin-right: 1em; text-align: right; line-height: 23px;
+}
+
+.celan p{
+	float: right ;
+	width: 16em;
+	margin-right: 1em;
+	text-align: left;
+	font-size: 10px;
+	margin-bottom: 3px;
+}
+
+.celan input{
+	margin-bottom: 5px;
+}
+.celan textarea{
+	
+	width: 161px;
+	height: 106px;
+	overflow: auto;
+	float: right;
+	margin-right: 10px;
+	margin-top: -18px;
+}
+.celan select{
+	margin-bottom:5px;
+}
+
+input::-webkit-input-placeholder{
+	font-size: 12px;
+}
+
+.tijiao{
+	width: 100%;
+	margin: 10px 0px 10px 0px;
+	border-radius: 10px 10px 10px 10px;
+	background: blue;
+	color: white;
+	height: 30px;
+
+
+}

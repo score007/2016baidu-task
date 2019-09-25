@@ -1,0 +1,147 @@
+body{
+	background: cadetblue;
+	height: 1386px;
+}
+.h6{
+	height: 1386px;
+	margin: auto;
+	width: 980px;
+	background: white;
+}
+
+.h6head{
+	height:61px;
+	width: 80%;
+	margin: auto;
+}
+.h6tou{
+	width: 110px;
+	height: 61px;
+	background: pink;
+
+}
+.h6tou p{
+	font-size:12px ;
+	position: relative;
+	left: 30px;
+	top: 48px;
+	color: white;
+}
+
+.h6head hr{
+	margin:0;
+	background: black;
+}
+.h6head label{
+	float: right;
+	font-size: 12px;
+	margin-top:48px ;
+	color: pink;
+
+}
+
+.h6body{
+	width: 80%;
+	margin: auto;
+	margin-top:30px;
+}
+.h6pic1{
+	width: 70%;
+	float: left;
+}
+
+.h6pic1 img{
+	width: 100%;
+	margin-right:20px ;
+}
+.h6ce{
+	width: 25%;
+	float: right;
+}
+
+.h6ce{
+	line-height: 35px;
+}
+.h6ce hr{
+	background: pink;
+	border: 2px solid pink;
+}
+
+.h6ce h1{
+	font-size:30px;
+	text-decoration: underline;
+	line-height: 1.2em;
+}
+
+.h6ce h2{
+	font-size: 24px;
+	text-decoration: underline;
+}
+
+.h6ce .p1{
+	font-size: 10px;
+	line-height: 15px;
+}
+
+.h6ce .p2{
+	font-size: 120px;
+	line-height: 140px;
+	color: greenyellow;
+}
+
+.h6ce .p3{
+	float: left;
+	line-height: 2em;
+	font-size:40px;
+	color: pink;
+}
+
+.h6ce .p4{
+	float: right;
+	color: cornflowerblue;
+	font-size: 18px;
+	margin-top:10px ;
+}
+
+.h6body1{
+	height: 380px;
+	width: auto;
+}
+
+.h6body2{
+	line-height: 1.3em;
+}
+.h6word1{
+	width: 30%;
+	float: left;
+}
+.h6body2 label{
+	text-decoration: underline;
+	font-size: 25px;
+	display: block;
+	margin-bottom: 15px;
+}
+.h6body2 div{
+	margin-right: 15px;
+}
+.h6body2 div p{
+	font-size: 12px;
+}
+.h6word1 label{
+	color: pink;
+}
+.h6word2 label{
+	color: blue;
+}
+.h6word3 label{
+	color: green;
+}
+.h6word2{
+	width: 30%;
+	float: left;
+}
+
+.h6word3{
+	width:30%;
+	float: left;
+}
