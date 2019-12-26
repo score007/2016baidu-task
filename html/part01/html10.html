@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>任务十：Flexbox 布局练习</title>
+	<style>
+	#container {
+		box-sizing: border-box;
+		width: 100%;
+		padding: 20px;
+		height: 400px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border: 1px solid #a8a8a8;
+	}
+	.body {
+		border: 1px solid red;
+		width: 150px;
+	}
+	.body-1 {
+		height: 120px;
+	}
+	.body-2 {
+		height: 100px;
+	}
+	.body-3 {
+		height: 40px;
+	}
+	.body-4 {
+		height: 200px;
+		border: 1px solid blue;
+	}
+	@media all and (max-width: 640px) {
+		.body-4 {
+			order: -1;
+		}
+		#container {
+			flex-wrap: wrap;
+		}
+	}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div class="body body-1"></div>
+		<div class="body body-2"></div>
+		<div class="body body-3"></div>
+		<div class="body body-4"></div>
+	</div>
+</body>
+</html>

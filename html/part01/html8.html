@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>响应式网格（栅格化）布局</title>
+		<style type="text/css">
+			body{
+				width: 100%;
+				box-sizing: border-box;
+			}
+			.body0{
+				margin: 10px;
+				background-color: darkgrey;
+				height: 50px;
+				box-sizing: border-box;
+				float: left;
+			}
+		@media (min-width: 755px) {
+			.max1 {width: calc(8.33333% - 20px);}
+			.max2 {width: calc(16.66667% - 20px);}
+			.max3 {width: calc(25% - 20px);}
+			.max4 {width: calc(33.33333% - 20px);}
+		}
+		@media (max-width: 756px) {
+			.min1 {width: calc(16.66667% - 20px);}
+			.min2 {width: calc(25% - 20px);}
+			.min3 {width: calc(50% - 20px);}
+			.min4 {width: calc(66.66667% - 20px);}
+		}
+		</style>
+	</head>
+	<body>
+		<div class="body0 max1 min1">1</div>
+		<div class="body0 max1 min2">2</div>
+		<div class="body0 max2 min1">3</div>
+		<div class="body0 max2 min2">4</div>
+		<div class="body0 max3 min3">5</div>
+		<div class="body0 max3 min4">6</div>
+		<div class="body0 max4 min3">7</div>
+		<div class="body0 max4 min4">8</div>
+		<div class="body0 max1 min3">9</div>
+		<div class="body0 max2 min4">10</div>
+		<div class="body0 max2 min3">11</div>
+		<div class="body0 max1 min4">12</div>
+	</body>
+</html>
