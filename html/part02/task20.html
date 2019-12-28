@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#inval{
+				width: 200px;
+				height: 100px;
+				overflow:auto;
+			}
+			ul{
+				text-decoration: none;
+				list-style: none;
+			}
+			ul li{
+				background-color: pink;
+				text-align: center;
+				display: inline-block;
+				width: 100px;
+				height: 100px;
+				margin-right: 5px;
+				cursor: pointer;
+			}
+			span {
+			color: red;
+		}
+		</style>
+	</head>
+	<body>
+		<textarea id="inval"></textarea>
+		<button id="leftin">左侧入</button>
+		<button id="rightin">右侧入</button>
+		<button id="leftout">左侧出</button>
+		<button id="rightout">右侧出</button>
+		<button id="search">查询</button>
+	    <input id="searchInput">
+		<ul id="dis">	
+		</ul>
+		
+		<script type="text/javascript">
+			var $=function(id){
+				return document.getElementById(id);
+			}
+			
+			var inVal=$("inval");
+			var leftIn=$("leftin");
+			var leftOut=$("leftout");
+			var rightIn=$("rightin");
+			var rightOut=$("rightout");
+			var search=$("search");
+			var searchInput=$("searchInput");
+			var dis=$("dis");
+			var displayer=[];
+			
+			leftIn.onclick=function(){
+				if(inVal.value){
+					displayer.unshift(inVal.value);
+				}
+				else{alert("请输入值");}
+				display();
+			}
+
+			rightIn.onclick=function(){
+				if(inVal.value){
+					displayer.push(inVal.value);
+				}
+				else{alert("请输入值");}
+				display();
+			}
+			
+			leftOut.onclick=function(){
+				alert("移除的值为"+displayer.shift(inVal.value));
+				display();
+			}
+			
+			rightOut.onclick=function(){
+				alert("移除的值为"+displayer.pop(inVal.value));
+				display();
+			}
+			
+			search.onclick=function(){
+					var content="";
+					var str = searchInput.value.trim();
+					dis.innerHTML = displayer.map(function(data) {
+						data = data.replace(new RegExp(str,"g"), "<span>" + str + "</span>");
+						return "<li>" + data + "</li>";
+					}).join("");
+			}
+			
+			function display(){
+				var content="";
+				for(i in displayer){
+					content+="<li>"+displayer[i]+"</li>";
+				}
+				dis.innerHTML=content;			
+			}
+			
+			function deleteDisplayer(num){
+				for(i in displayer){
+					if(num==displayer[i]){
+						delete displayer[i];
+						break;
+					}
+				}
+				display();
+			}
+			
+			function addEvent(element,event,func){
+				if(element.addEventListener){
+					element.addEventListener(event,func);
+				}
+				else if(element.attachEvent){
+					element.attachEvent("on"+event,func);
+				}
+				else{
+					element["on"+event]=func;
+				}
+			}
+			
+			addEvent(dis,"click",function(){
+				deleteDisplayer(event.target.innerText);
+			})
+		</script>
+	</body>
+</html>

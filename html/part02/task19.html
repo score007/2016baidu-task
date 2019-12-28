@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				height: 500px;
+				display: flex;
+				flex-wrap: wrap-reverse;
+				justify-content: space-around;
+				margin-top: 50px;
+			}
+			ul li{
+				background-color: pink;
+				text-decoration: none;
+				list-style: none;
+				width: 20px;
+			}
+		</style>
+	</head>
+	<body>
+	<input id="inval">
+	<button id="leftin">左侧入</button>
+	<button id="rightin">右侧入</button>
+	<button id="leftout">左侧出</button>
+	<button id="rightout">右侧出</button>
+	<button id="bubble">冒泡</button>
+	<button id="random">随机50个数字</button>
+	<ul id="dis">
+	</ul>
+	
+	<script type="text/javascript">
+		var $=function(id){
+		return	document.getElementById(id);
+		}
+		var inVal = $("inval"),
+			leftIn = $("leftin"),
+			rightIn = $("rightin"),
+			leftOut = $("leftout"),
+			rightOut = $("rightout"),
+			dis = $("dis"),
+			bubble = $("bubble"),
+			ran = $("random");
+		var displayer=[];
+		
+		leftIn.onclick=function(){
+			if(inVal.value>=10&&inVal.value<=100){
+				displayer.unshift(inVal.value);
+				display();
+			}
+			else{alert("请输入10到100之内的数字")}
+		}
+		rightIn.onclick=function(){
+			if(inVal.value>=10&&inVal.value<=100){
+			displayer.push(inVal.value);
+			display();
+			}
+			else{alert("请输入10到100之内的数字")}
+		}
+		leftOut.onclick=function(){
+			alert("删除了左侧的"+displayer.shift());
+			display();
+		}
+		rightOut.onclick=function(){
+			alert("删除了左侧的"+displayer.pop());
+			display();
+		}
+		
+		ran.onclick=function(){
+			 displayer=[];
+			var	content="",
+				n,
+				i=0;
+			while(i<50){
+				n=Math.round(100*Math.random());
+				if(n<=100&&n>=10){
+					displayer.push(n);
+					i++;
+				}
+			}
+			display();			
+		}
+		
+		bubble.onclick=function(){
+			displayer.sort(function(a,b){return a-b});
+			display();
+		}
+		
+		function display(){
+			var content="";
+			for(i in displayer){
+				content+="<li style='height:"+5*displayer[i]+"px;'></li>";
+			}
+			dis.innerHTML=content;
+		}
+		
+		function deleteDisplayer(num){
+			for(i in displayer){
+				if(num==displayer[i]){
+					delete displayer[i];
+					break;
+				}
+			}
+			display();
+		}
+		
+		function addEvent(element,event,func){
+			if (document.addEventListener) {
+				element.addEventListener(event,func);
+			} else if(document.attachEvent){
+				element.attachEvent("on"+event,func);
+			}
+			else{
+				element["on"+event]=func;
+			}
+		}
+		
+		addEvent(dis,"click",function(){
+			deleteDisplayer(event.target.innerText);
+		})
+	</script>
+	</body>
+</html>

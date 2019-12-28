@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+			<style type="text/css">
+				* {
+					font-family: 微软雅黑;
+				}
+				ul li {
+					background: #EE82EE;
+					color: #fff;
+					display: inline-block;
+					height: 50px;
+					padding: 0 10px;
+					text-align: center;
+					font-size: 30px;
+					line-height: 50px;
+					margin-left: 5px;
+				}
+				li:hover {
+					cursor: pointer;
+				}
+			</style>
+	</head>
+	<body>
+		<span>Tag:</span><input id="tagVal">
+		<ul id="disTag">
+		</ul>
+		<textarea id="hobbyVal" rows="5" cols="40"></textarea><br>
+		<button id="hobbyBtn">确认兴趣爱好</button>
+		<ul id="disHobby">	
+		</ul>
+		<script type="text/javascript">
+			//事件绑定兼容
+			function addEvent(ele, event, func) {
+			    if (ele.addEventListener) {
+			        ele.addEventListener(event, func);
+			    } else if (ele.attachEvent) {
+			        ele.attachEvent("on"+event, func);
+			    } else  {
+			        ele["on" + event] = func;
+			    }
+			}
+			//读取各个ID对象
+			var $ = function(id) {
+						return document.getElementById(id);
+					};
+			var tagVal = $("tagVal"),
+				disTag = $("disTag"),
+				hobbyVal = $("hobbyVal"),
+				hobbyBtn = $("hobbyBtn"),
+				disHobby = $("disHobby");
+			
+		</script>
+	</body>
+</html>

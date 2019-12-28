@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<label>请输入北京今天空气质量：<input id="en"/>
+			<button onclick="myFunction()">确认填写</button>
+		</label>
+		<p>你输入的值是：<span id="tips">尚无录入</span></p>
+		<script>
+			function myFunction(){
+				
+				var x=document.getElementById("en");
+				var y=document.getElementById("tips");
+				y.innerHTML=x.value;
+			}
+		</script>
+	</body>
+</html>

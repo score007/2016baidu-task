@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+			border: 1px solid black;
+			display: flex;
+			justify-content: space-between;
+			margin: auto;
+			background: #fff;
+		}
+		#root {
+			width: 800px;
+			height: 250px;
+		}
+		.child1 {
+			width: 370px;
+			height: 200px;
+		}
+		.child2 {
+			width: 150px;
+			height: 150px;
+		}
+		.child3 {
+			width: 50px;
+			height: 80px;
+		}
+		</style>
+	</head>
+	<body>
+	<div id="root">
+		<div class="child1">
+			<div class="child2">
+				<div class="child3"></div>
+				<div class="child3"></div>
+			</div>
+			<div class="child2">
+				<div class="child3"></div>
+				<div class="child3"></div>
+			</div>
+		</div>
+		<div class="child1">
+			<div class="child2">
+				<div class="child3"></div>
+				<div class="child3"></div>
+			</div>
+			<div class="child2">
+				<div class="child3"></div>
+				<div class="child3"></div>
+			</div>
+		</div>
+	</div>
+	<button id="pre">前序</button>
+	<button id="mid">中序</button>
+	<button id="last">后序</button>
+	
+	<script type="text/javascript">
+		var $=function(id){
+			return document.getElementById(id);
+		}
+		var pre=$("pre");
+		var root=$("root");
+		var mid=$("mid");
+		var last=$("last");
+		var arry=[],
+			timer=null;
+		pre.onclick = function() {
+			reSet();
+			preOrder(root);
+			render();
+		}
+		mid.onclick = function() {
+			reSet();
+			midOrder(root);
+			render();
+		}
+		last.onclick = function() {
+			reSet();
+			lastOrder(root);
+			render();
+		}
+		wide.onclick = function() {
+			reSet();
+			wideOrder(root);
+			render();
+		}
+		//递归二叉树算法
+		function preOrder(node) {
+			if (node) {
+				arry.push(node);
+				preOrder(node.children[0]);
+				preOrder(node.children[1]);
+			}
+		}	
+		function midOrder(node) {
+			if (node) {
+				midOrder(node.children[0]);
+				arry.push(node);
+				midOrder(node.children[1]);
+			}
+		}	
+		function lastOrder(node) {
+			if (node) {
+				lastOrder(node.children[0]);
+				lastOrder(node.children[1]);
+				arry.push(node);
+			}
+		}
+		//数组渲染	
+		function render() {
+			var i = 0;
+			arry[i].style.background = "blue";
+			timer = setInterval(function () {
+				i++;
+				if (i < arry.length) {
+					arry[i-1].style.background = "#fff";
+					arry[i].style.background = "blue";
+				} else {
+					clearInterval(timer);
+					arry[arry.length-1].style.background = "#fff";
+				}
+			},500)
+		}
+		//初始化样式
+		function reSet() {
+			arry = [];
+			clearInterval(timer);
+		}
+	</script>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		  <h3>污染城市列表</h3>
+  <ul id="list">
+  </ul>
+	<script>
+		var a=[["北京",120],
+			   ["长沙",60],
+			   ["成都",80],
+				["福州",40],
+				["太原",100],
+				["广州", 50],
+			];		
+		var t;
+		var ul=document.getElementById("list");
+		var li1=document.createElement("li");
+		var li2=document.createElement("li");
+		var li3=document.createElement("li");
+		for(var i=0;i<a.length;i++){
+			for(var j=0;j<a.length;j++){
+				if(a[i][1]>a[j][1]){
+					t=a[i];
+					a[i]=a[j];
+					a[j]=t;
+									}
+										}
+									}
+		/*方法一:document.write(),但document.write()不被推荐使用
+			var num1=document.write("第一名："+a[0][0]+","+a[0][1]+"</br>");
+			var num2=document.write("第二名："+a[1][0]+","+a[1][1]+"</br>");
+			var num3=document.write("第三名："+a[2][0]+","+a[2][1]+"</br>");*/
+			var num1=document.createTextNode("第一名："+a[0][0]+","+a[0][1]);
+			var num2=document.createTextNode("第二名："+a[1][0]+","+a[1][1]);
+			var num3=document.createTextNode("第三名："+a[2][0]+","+a[2][1]);
+			li1.appendChild(num1);
+			li2.appendChild(num2);
+			li3.appendChild(num3);
+			ul.appendChild(li1);
+			ul.appendChild(li2);
+			ul.appendChild(li3);
+			
+			
+	</script>
+	</body>
+</html>

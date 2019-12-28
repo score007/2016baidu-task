@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				list-style: none;
+			}
+			ul li{
+				background: pink;
+				color: #fff;
+				width: 50px;
+				height: 50px;
+				display: inline-block;
+				margin-right:2px;
+				line-height: 50px;
+			}
+			ul li:hover{
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="inval"/>
+		<button id="leftin">左侧入</button>
+		<button id="rightin">右侧入</button>
+		<button id="leftout">左侧出</button>
+		<button id="rightout">右侧出</button>
+		<ul id="dis"></ul>
+		<script type="text/javascript">
+			var $=function(id){
+				return document.getElementById(id);
+			}
+			var inVal=$("inval");
+			var leftIn=$("leftin");
+			var rightIn=$("rightin");
+			var leftOut=$("leftout");
+			var rightOut=$("rightout");
+			var dis=$("dis");
+			var displayer=[];
+			leftIn.onclick=function(){
+				displayer.unshift(inVal.value);
+				display();
+			}
+			rightIn.onclick=function(){
+				displayer.push(inVal.value);
+				display();
+			}
+			leftOut.onclick=function(){
+				alert("删除了左侧的"+displayer.shift());
+				display();
+			}
+			rightOut.onclick=function(){
+				alert("删除了右侧的"+displayer.pop());
+				display();
+			}
+			
+			function display(){
+				var content = "";
+				for (var i in displayer) {
+					content += "<li>" + displayer[i] + "</li>";
+				}
+				dis.innerHTML = content;
+			}
+			
+			function deleteDisplayer(num){
+				for(i in displayer){
+					if(displayer[i]==num){
+						delete displayer[i];
+						break;
+					}
+				}
+				display();
+			}
+			
+			function addEvent(element, event, func) {
+			    if (element.addEventListener) {
+			        element.addEventListener(event, func);
+			    }
+			    else if (element.attachEvent) {
+			        element.attachEvent("on" + event, func);
+			    }
+			    else {
+			        element["on" + event] = func;
+			    }
+			}
+			
+			addEvent(dis,"click",function(){
+				deleteDisplayer(event.target.innerText);
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#btn{
+				margin-left: 40px;
+				width: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+		<label>城市名称：<input id="city"/></label></br>
+		<label>空气质量：<input id="num"/></label></br>
+		<button id="btn">确认提交</button>
+		</div>
+		<table id="table"></table>
+		<script>
+			var $=function(id){
+				return document.getElementById(id);
+			}
+			var aqiCity={};			
+			function test(){
+				var city=$("city").value.trim();
+				var num=$("num").value.trim();
+				if(!city.match(/^[A-Za-z\s\u4E00-\u9FA5]+$/)){
+					alert("城市名必须为英文或者中文");
+					return;
+				}
+				if(!num.match(/^\d+$/)){
+					alert("空气质量请输入整数");
+					return;
+				}
+				aqiCity[city]=num;
+			}
+			
+			function renderAqiList(){
+				var content="<tr><td>城市</td><td>空气指数</td><td>操作</td></tr>";
+				for(city in aqiCity){
+					content+="<tr><td>"+city+"</td><td>"+aqiCity[city]+
+					"</td><td><button data-city='" + city +"'>删除</button>";
+				}
+				$("table").innerHTML = city ? content : "";
+			}
+			
+			function main(){
+				test();
+				renderAqiList();
+			}
+			
+			function delBtnHandle(city) {
+    // do sth.
+    		delete aqiData[city];
+    		renderAqiList();
+			}
+			
+			function init(){
+				$("btn").onclick=main;
+				$("table").addEventListener("click", function(event){
+        		delBtnHandle(event.target.dataset.city);
+  				  })
+			}
+			init();
+		</script>
+	</body>
+</html>
