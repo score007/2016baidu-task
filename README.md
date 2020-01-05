@@ -18,7 +18,8 @@
   15. 零基础JavaScript编码（三）
   16. 零基础JavaScript编码（四）
   17. 零基础JavaScript编码（五）
-  19. 基础JavaScript练习（一）
-  20. 基础JavaScript练习（二）
-  21. 基础JavaScript练习（三）
+  18. 基础JavaScript练习（一）
+  19. 基础JavaScript练习（二）
+  20. 基础JavaScript练习（三）
+  21. 基础JavaScript练习（四）
   22. JavaScript和树（一）
