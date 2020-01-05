@@ -1,7 +1,6 @@
 ## 2016baidu-task
 百度前端技术学院任务
 
-1. part1
   1. 零基础HTML编码
   2. 零基础HTML及CSS编码(一）
   3. 三栏式布局
@@ -14,7 +13,6 @@
   10. Flexbox 布局练习
   11. 移动Web页面布局实践
   12. 学习CSS 3的新特性
-2. part2
   13. 零基础JavaScript编码（一）
   14. 零基础JavaScript编码（二）
   15. 零基础JavaScript编码（三）
